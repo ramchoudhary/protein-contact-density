@@ -7,7 +7,7 @@ using namespace std;
 int y[2600][2600]={};
 double x[2600][5]={};
 double z[2600][5]={};
-int saikat=0,saikat1=0;
+int ram=0,ram1=0;
 string trim(string temp){
 	int n=0;
 	string fin="";
@@ -38,7 +38,7 @@ double calc(int i,int j,int c){
 		if (temporary<=60.0){
 			y[i][j]=1;
 			y[j][i]=1;
-			saikat++;
+			ram++;
 			cout<<"("<<x[i][4]<<","<<x[j][4]<<")"<<endl;
 			/*cout<<"1) ";
 			for(a=0;a<=4;a++)
@@ -47,7 +47,7 @@ double calc(int i,int j,int c){
 			for(a=0;a<=4;a++)
 				cout<<x[j][a]<<" ";
 			cout<<endl;*/
-			
+
 		}
 		/*else{
 			y[i][j]=0;
@@ -58,11 +58,11 @@ double calc(int i,int j,int c){
 		if (temporary<=60.0 && y[i][j]==1){   //unedit this
 		//if (temporary<=6.0){
 			cout<<"("<<z[i][4]<<","<<z[j][4]<<")"<<endl;
-			saikat1++;
+			ram1++;
 		}
 	}
-	
-} 
+
+}
 
 int demo(int p,int c){
 	if (c){
@@ -114,9 +114,9 @@ void master(char *fname,int check){
 		}
 		 	myfile.close();
   	}
-	else 
-		cout << "Unable to open file"; 
-		//cout << max_count<<endl; 
+	else
+		cout << "Unable to open file";
+		//cout << max_count<<endl;
 	cout<<"The pair of all CA atoms with distance between less than or equal to 6 Angstrom are:"<<endl;
 	for (p=0;p<max_count;p++){
 		if (demo(p,check))
@@ -146,9 +146,9 @@ int main(int argc, char *argv[]){
 	master(argv[1],1);
 	cout<<"\nLet's calculate for "<<argv[2]<<endl;
 	master(argv[2],0);
-	cout<<"\nFrom "<<argv[1]<<" "<<saikat<<" pairs, similarly from "<<argv[2]<<" "<<saikat1<<" pairs"<<endl;
-	if (saikat){
-		ratio=(double)saikat1/saikat;
+	cout<<"\nFrom "<<argv[1]<<" "<<ram<<" pairs, similarly from "<<argv[2]<<" "<<ram1<<" pairs"<<endl;
+	if (ram){
+		ratio=(double)ram1/ram;
 		cout<<"The ratio is: "<<ratio<<"\nThank You\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"<<endl;
 	}
 	return 1;
