@@ -100,10 +100,7 @@ void master(char *fname,int check){
 				x[count][4]=count;
 				for(i=0;i<3;i++)
 					x[count][i]=atof(trim(line.substr(val+i*8,8)).c_str());
-				//for(a=0;a<=4;a++){
-					//if (x[count][a]!=74.931)
-				//	cout<<x[count][a]<<" ";}
-				//cout<<endl;
+		
 			}
 			else{
 				z[count][3]=1;
